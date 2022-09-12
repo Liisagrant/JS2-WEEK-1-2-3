@@ -44,3 +44,71 @@ const pet = {
 const { firstPetName, lastPetName, petCountry } = pet;
 
 const greetPet = `hello you are ${firstPetName} ${lastPetName} from ${petCountry}`;
+
+//Destructuring Parameters
+//You can destructure parameters which is a very common technique in JavaScript, Array methods and React.
+
+// function greetPerson(peopleObject) {
+//   const { firstNavn, lastNavn } = peopleObject;
+//   console.log(`Hello ${firstNavn} ${lastNavn}.`);
+// }
+
+//It can also be done like this.
+function greetPerson({ firstNavn, lastNavn }) {
+  console.log(`Hello ${firstNavn} ${lastNavn}`);
+}
+
+const people = {
+  firstNavn: "Robin",
+  lastNavn: "Grant",
+};
+
+greetPerson(people);
+
+//Destructured in an Array method
+const happpyPeople = [
+  {
+    firstName: "Mia",
+    lastNavn: "Woods",
+    score: 9,
+  },
+  {
+    firstName: "Lisa",
+    lastNavn: "Grant",
+    score: 8,
+  },
+  {
+    firstName: "Daniel",
+    lastNavn: "Woods",
+    score: 3,
+  },
+];
+
+const winners = happpyPeople.filter(({ score }) => {
+  if (score >= 5) {
+    return true;
+  }
+});
+
+//Destructuring Arrays
+const coords = [12, 30, 5, 9, 100, 53];
+
+// 'x' is index 0 in the array
+// 'y' is index 1 in the array
+const [x, y] = coords;
+
+console.log(x, y);
+// Logs:
+// 12 30
+
+//Array Destructuring Example 2
+//Let’s have a look at another example. We have an array of names (names) and then destructure index 0 and index 1 to the variable names name0 and name1.
+const names = ["Ola", "Kari", "Joakim", "Ole"];
+
+// 'name0' is index 0 in the array
+// 'name1' is index 1 in the array
+const [name0, name1] = names;
+
+console.log(name0, name1);
+// Logs:
+// Ola Kari
