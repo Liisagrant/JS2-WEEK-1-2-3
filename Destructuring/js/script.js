@@ -90,6 +90,8 @@ const winners = happpyPeople.filter(({ score }) => {
   }
 });
 
+console.log(winners);
+
 //Destructuring Arrays
 const coords = [12, 30, 5, 9, 100, 53];
 
